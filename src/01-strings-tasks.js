@@ -18,9 +18,11 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(a, b) {
+  const longString = a + b;
+  return (longString);
 }
+concatenateStrings();
 
 
 /**
@@ -34,10 +36,11 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(string) {
+  const find = string.length;
+  return (find);
 }
-
+getStringLength('hello');
 /**
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
@@ -51,9 +54,11 @@ function getStringLength(/* value */) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  const greetings = `Hello, ${firstName} ${lastName}!`;
+  return (greetings);
 }
+getStringFromTemplate('John', 'Doe');
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -65,11 +70,18 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
+function extractNameFromTemplate(/* firstName, lastName */) {
+// const greetings = `Hello, ${firstName} ${lastName}!`;
+//  const resO = greetings.replace(/^.{7}/, '');
+//  const resB = resO.slice(0, -1);
+//  return (resB);
+//  const useA = `${firstName} ${lastName}`;
+//  const greetings =`Hello, ${useA}!`;
+//  const useB = greetings.match(`${useA}`);
+//  return (useB);
   throw new Error('Not implemented');
 }
-
-
+//  extractNameFromTemplate('John', 'Doe');
 /**
  * Returns a first char of the given string.
  *
@@ -80,9 +92,12 @@ function extractNameFromTemplate(/* value */) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(string) {
+  const use = string;
+  const res = use.charAt(0);
+  return (res);
 }
+getFirstChar('Hello');
 
 /**
  * Removes a leading and trailing whitespace characters from string.
@@ -95,9 +110,12 @@ function getFirstChar(/* value */) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(string) {
+  const use = string;
+  const res = use.trim();
+  return (res);
 }
+removeLeadingAndTrailingWhitespaces('  Abracadabra');
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -110,9 +128,12 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+function repeatString(string, num) {
+  const use = string;
+  const numb = num;
+  return (use.repeat(numb));
 }
+repeatString('Hi, baby-bon', 2);
 
 /**
  * Remove the first occurrence of string inside another string
@@ -126,9 +147,14 @@ function repeatString(/* value, count */) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, searchStr) {
+  const index = str.indexOf(searchStr);
+  if (index === -1) {
+    return str;
+  }
+  return str.slice(0, index) + str.slice(index + searchStr.length);
 }
+removeFirstOccurrences('To be or to be', 'not');
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -141,10 +167,11 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(string) {
+  const use = string.slice(1, -1);
+  return (use);
 }
-
+unbracketTag('<div>');
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -156,10 +183,11 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(string) {
+  const use = string.toUpperCase();
+  return (use);
 }
-
+convertToUpperCase('Thunderstruck');
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
@@ -205,8 +233,6 @@ function extractEmails(/* str */) {
 function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
 }
-
-
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -223,9 +249,14 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  const index = (x) => input.indexOf(x);
+  const translate = (x) => (index(x) > -1 ? output[index(x)] : x);
+  return str.split('').map(translate).join('');
 }
+encodeToRot13('hello');
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -240,9 +271,11 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  const use = value;
+  return typeof use === 'string' || use instanceof String;
 }
+isString('test');
 
 
 /**
@@ -269,9 +302,16 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const use = value;
+  const arr = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+  const a = arr.indexOf(use);
+  return (a);
 }
+getCardId('A♣');
 
 
 module.exports = {

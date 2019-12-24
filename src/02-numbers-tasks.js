@@ -19,9 +19,11 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(a, b) {
+  const use = a * b;
+  return (use);
 }
+getRectangleArea(5, 5);
 
 
 /**
@@ -35,10 +37,11 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCicleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCicleCircumference(a) {
+  const use = (Math.PI * a) * 2;
+  return (use);
 }
-
+getCicleCircumference(0);
 /**
  * Returns an average of two given numbers.
  *
@@ -51,10 +54,11 @@ function getCicleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(a, b) {
+  const use = (a / 2 + b / 2);
+  return (use);
 }
-
+getAverage(6, 3);
 /**
  * Returns a distance beetween two points by cartesian coordinates.
  *
@@ -71,8 +75,13 @@ function getAverage(/* value1, value2 */) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
+  // const deltaX = (x1, x2);
+  // const deltaY = (y1, y2);
+  // const dist = Math.sqrt((deltaX, 2) + Math.sqrt(deltaY, 2));
+  // return (Math.floor(dist));
   throw new Error('Not implemented');
 }
+// getDistanceBetweenPoints(-5, 0, 10, -10);
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -125,10 +134,12 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  const use = value.toString();
+  const useA = use.slice(-1);
+  return (useA);
 }
-
+getLastDigit(100);
 
 /**
  * Returns a number by given string representation.
@@ -141,10 +152,13 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  const use = value;
+  const useA = Number(use);
+  return (useA);
+  // throw new Error('Not implemented');
 }
-
+parseNumberFromString('100');
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
@@ -158,10 +172,13 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelipidedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelipidedDiagonal(a, b, c) {
+  const useA = ((a * a) + (b * b));
+  const res = (useA + (c * c));
+  const resO = Math.sqrt(res);
+  return (resO);
 }
-
+getParallelipidedDiagonal(1, 1, 1);
 /**
  * Returns the number rounded to specified power of 10.
  *
@@ -180,9 +197,11 @@ function getParallelipidedDiagonal(/* a, b, c */) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(/* num, pow */) {
+  // const use = Math.round((num / pow, pow) * pow);
+  // return (use);
   throw new Error('Not implemented');
 }
-
+// roundToPowerOfTen(1234, 0);
 /**
  * Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
@@ -200,14 +219,21 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  if (typeof n !== 'number' || n <= 1 || n % 1 !== 0) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
-
+isPrime(3);
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
  * otherwise returns default value passed as a second argument.
- *
  * @param {any} value
  * @param {any} def
  * @return {number}
@@ -220,9 +246,17 @@ function isPrime(/* n */) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(/* value, def */) {
+// const use = value;
+// const useA = def;
+// if (typeof use !== 'number') {
+//   return useA;
+// }
+// if (typeof use === 'number') {
+//   return use;
+// }
   throw new Error('Not implemented');
 }
-
+// toNumber(new Number(42), 0);
 module.exports = {
   getRectangleArea,
   getCicleCircumference,

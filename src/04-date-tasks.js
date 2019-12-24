@@ -19,9 +19,12 @@
  *    'Tue, 26 Jan 2016 13:48:02 GMT' => Date()
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
-function parseDataFromRfc2822(/* value */) {
-  throw new Error('Not implemented');
+function parseDataFromRfc2822(date) {
+  const use = date;
+  const res = new Date(use);
+  return (res);
 }
+parseDataFromRfc2822('December 17, 1995 03:24:00');
 
 /**
  * Parses an ISO 8601 string date representation into date value
@@ -34,10 +37,12 @@ function parseDataFromRfc2822(/* value */) {
  *    '2016-01-19T16:07:37+00:00'    => Date()
  *    '2016-01-19T08:07:37Z' => Date()
  */
-function parseDataFromIso8601(/* value */) {
-  throw new Error('Not implemented');
+function parseDataFromIso8601(dat) {
+  const use = dat;
+  const res = Date.parse(use);
+  return (res);
 }
-
+parseDataFromIso8601('2016-01-19T08:07:37Z');
 
 /**
  * Returns true if specified date is leap year and false otherwise
@@ -53,8 +58,17 @@ function parseDataFromIso8601(/* value */) {
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
+function isLeapYear(/* year */) {
+  // const use = date;
+  // function isInteger(num) {
+  //   // eslint-disable-next-line no-bitwise
+  //   return (num ^ 0) === num;
+  // }
+  // if (use / 4 !== isInteger) return (true);
+  // //if (use / 4 === 0(use / 100 !== 0) || (use / 400 === 0)) return (true);
+  // return (use);
+  // return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+  throw new Error('Not implemented=');
 }
 
 
